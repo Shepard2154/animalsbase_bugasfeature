@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ animal.animal_name }}</title>
+    <link rel="stylesheet" href="{% static 'css/card_pet.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="head">
+                <img src="{% static 'admin/img/pawprint.png' %}" alt="">
+                <h1>{{ animal.animal_name }}</h1>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="wrapper">
+            <div class="body-card">
+                <div class="grid-container">
+                    <div class="foto"><img class="foto" src="{{  animal.photo.url  }}" alt=""></div>
+                    <div class="option">
+                        <div class="info-place">
+                            <div class="mini-card"> <span>Вид:</span>
+                                <p>{{ animal.kind }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Возраст, год:</span>
+                                <p>{{ animal.age }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Вес, кг:</span>
+                                <p>{{ animal.weight }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Пол:</span>
+                                <p>{{ animal.sex }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Порода:</span>
+                                <p>{{ animal.breed }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Окрас:</span>
+                                <p>{{ animal.colour }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Шерсть:</span>
+                                <p>{{ animal.wool }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Уши:</span>
+                                <p>{{ animal.ears }}</p>
+                            </div>
+                            <div class="mini-card"> <span>Хвост:</span>
+                                <p>{{ animal.tail }} </p>
+                            </div>
+                            <div class="mini-card"> <span>Размер:</span>
+                                <p>{{ animal.size }}</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/animals.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Электронная база животных</title>
+    <link rel="shortcut icon" href="https://data.mos.ru/img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <br>
+    <h1>Электронная база животных Москвы</h1>
+        <br>
+<!--    <div class="list-group sidebar col-md-3 float-right">-->
+<!--              <a class="list-group-item list-group-item-action text-info">Питомец</a>-->
+<!--              <a href="#" class="list-group-item list-group-item-action">Собака</a>-->
+<!--              <a href="#" class="list-group-item list-group-item-action">Кошка</a>-->
+<!--            </div>-->
+<!--    <p></p>-->
+<!--    <div class="list-group sidebar col-md-3 float-right">-->
+<!--              <a class="list-group-item list-group-item-action text-info">Пол</a>-->
+<!--              <a href="boys/" class="list-group-item list-group-item-action">Мужской</a>-->
+<!--              <a href="girls/" class="list-group-item list-group-item-action">Женский</a>-->
+<!--            </div>-->
+    <section>
+        <div class="border-line-table">
+            <div class="table-animals">
+                <table class="main-table border-table-animal">
+                    <tr class="raw-title">
+                        <th class="column cell1 cell-par border-table-animal ">
+                            <div>#</div>
+                        </th>
+                        <th class="column border-table-animal">
+                            <div>Питомец</div>
+                        </th>
+                        <th class="column border-table-animal">
+                            <div>Кличка</div>
+                        </th>
+                        <th class="column border-table-animal">
+                            <div>Пол</div>
+                        </th>
+                        <th class="column border-table-animal">
+                            <div>Порода</div>
+                        </th>
+                        <th class="column border-table-animal">
+                            <div>
+                                Возраст, год
+                            </div>
+                        </th>
+                        <th class="column border-table-animal">
+                            <div>Приют</div>
+                        </th>
+                    </tr>
+                    {% for animal in animals %}
+                    <tr class="raw">
+                        <td class="cell cell1 border-table-animal">
+                            <div>
+                                <p>{{ forloop.counter }}</p>
+                            </div>
+                        </td>
+                        <td class="cell border-table-animal">
+                            <a class="link-pet" href="/animals-list/{{ animal.pk }}">{{ animal.kind }}</a>
+                        </td>
+                        <td class="cell border-table-animal">
+                            <a class="link-pet" href="/animals-list/{{ animal.pk }}">{{ animal.animal_name }}</a>
+                        </td>
+                        <td class="cell border-table-animal">
+                            <div>
+                                <p>{{ animal.sex }}</p>
+                            </div>
+                        </td>
+                        <td class="cell border-table-animal">
+                            <div>
+                                <p>{{ animal.breed }}</p>
+                            </div>
+                        </td>
+                        <td class="cell border-table-animal">
+                            <div>
+                                <p>{{ animal.age }}</p>
+                            </div>
+                        </td>
+                        <td class="cell border-table-animal">
+                            <div>
+                                <p>{{ animal.shelter_address }}</p>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+    <br>
+</body>
+
+</html>
